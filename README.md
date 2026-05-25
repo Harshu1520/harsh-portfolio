@@ -26,6 +26,7 @@ harsh-portfolio/
 ├── index.html          # Core structure, semantic HTML5, layouts & modals
 ├── style.css           # Glassmorphism design system, CSS theme variables & keyframe animations
 ├── app.js            # Typewriter animation, theme toggling, scroll reveal & lightbox modals
+├── .nojekyll           # SPECIAL FILE: Tells GitHub Pages to skip Jekyll compilation and deploy static HTML directly
 ├── README.md           # Documentation and hosting instructions
 └── assets/             # Raw file catalog containing:
     ├── developer_hero_graphic.png        # Generated custom header illustration
@@ -61,10 +62,17 @@ To get a public URL for your ATS resume, deploy your folder using any of these s
 ### Method A: GitHub Pages (Best for Version Control)
 1. Register/Login to [github.com](https://github.com).
 2. Create a new repository named `harsh-portfolio`.
-3. Upload all the project files and folders (`index.html`, `style.css`, `app.js`, `README.md`, and the `assets` folder) directly into your repository.
+3. Upload all the project files and folders (`index.html`, `style.css`, `app.js`, `.nojekyll`, `README.md`, and the `assets` folder) directly into your repository.
 4. Navigate to **Settings** -> **Pages** in the repo.
-5. Under "Build and deployment", set the source branch to **main** (or `master`) and click **Save**.
+5. Under **"Build and deployment"**:
+   * **Source**: Select `Deploy from a branch`.
+   * **Branch**: Select `main` (or `master`) and change the folder selection dropdown to **`/ (root)`** instead of `/docs`. **Do NOT select `/docs`** as your files are placed in the root folder!
+   * Click **Save**.
 6. Your live link will be ready at: `https://<your-username>.github.io/harsh-portfolio/`
+
+> [!TIP]
+> **Why did the SCSS / Jekyll build error occur?**
+> By default, GitHub Pages attempts to build your page using a compiler called Jekyll (which looks for SCSS stylesheets inside a `/docs` subfolder). Because our portfolio is a pure static HTML5/CSS3 site, we bypass Jekyll completely by placing a file named `.nojekyll` in the root folder. This resolves all build errors and ensures your site deploys instantly and flawlessly!
 
 ### Method B: Vercel (Easiest Drag-and-Drop)
 1. Go to [vercel.com](https://vercel.com) and create an account.
