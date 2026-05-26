@@ -77,7 +77,7 @@ function initTypewriter() {
         'AI & GenAI Enthusiast',
         'Cybersecurity Student',
         'Cloud Solutions Architect',
-        'Business Management Graduate'
+        'Information Technology Student'
     ];
     
     let titleIndex = 0;

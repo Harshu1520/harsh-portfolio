@@ -10,10 +10,10 @@ Live Local Preview: **[http://localhost:8000](http://localhost:8000)** (when run
 
 1. **Light & Dark Theme Manager**: Supports a premium Dark Theme (default) with deep navy/black backgrounds and glowing blue-violet accents, alongside a crisp, high-contrast Light Theme. State choices are saved in `localStorage` to persist across visits.
 2. **Premium Visual Hero**: Features a custom 3D neon-lit illustration of a developer working at a desk, a dynamic typing text animator cycle of professional titles, and floating social connection controls.
-3. **Integrated Global Journey Timeline**: A highly creative vertical timeline displaying UK business management academic/retail experience (University of Leicester, Tesco, Samworth Brothers) alongside India IT academic/operations experience (R.G.P. Institute of Technology, Zclick, Bharat Restaurant).
+3. **Integrated Global Journey Timeline**: A highly creative vertical timeline displaying UK retail operations (Tesco, Samworth Brothers, Indian Roaster) alongside India IT academic milestones (R.N.G.P. Institute of Technology, HSC/SSC at J&S Guzder School) and customer service operations (Bharat Restaurant, Zclick).
 4. **Interactive Skills Tab Filter**: Dynamic, grid-aligned skills showcase grouped into **Web & API**, **AI & Cloud**, **Security & Logic**, and **Business & People** tabs with layout sorting transitions.
 5. **Graduation Group Project Showcase**: Direct integration of your **Evidence Management System (EMS)** IT graduation project built under GTU guidelines with a 3-member team. Features a clean preview card and a direct **"View Project Report PDF"** download button.
-6. **Consolidated Certificates Modal**: Built-in verification vault that allows recruiters to click any credential (Deloitte Cyber, JPMorgan Chase Software Engineering, TATA Cyber, Google AI, Microsoft GenAI) and view your consolidated **17-certificate verified ledger** dynamically inside a custom PDF Lightbox viewer.
+6. **Consolidated Certificates Modal**: Built-in verification vault that allows recruiters to click any credential (Deloitte Cyber, JPMorgan Chase Software Engineering, TATA Cyber, Google AI, Microsoft GenAI) and view your consolidated **13-certificate verified ledger** dynamically inside a custom PDF Lightbox viewer.
 7. **Contact Form & Floating Outlines**: Sleek contact input fields with floating outlines that scale upwards on focus, alongside mock form submission states.
 
 ---
