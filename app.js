@@ -307,28 +307,54 @@ function initContactForm() {
         const originalBtnContent = submitBtn.innerHTML;
         
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending Message...';
         
-        // Simulate email submit trigger (standard client handling)
-        setTimeout(() => {
-            // Restore button
-            submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message Sent!';
-            submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-            submitBtn.style.boxShadow = '0 4px 15px rgba(16, 185, 129, 0.3)';
-            
-            // Log for verification
-            console.log('--- Form Submission ---', { name, email, subject, message });
-            
-            // Reset form
-            setTimeout(() => {
+        // Web3Forms AJAX integration
+        const web3formsUrl = 'https://api.web3forms.com/submit';
+        const payload = {
+            access_key: '0314de41-1e0c-4f15-b56c-5ca9b0aea2f7',
+            name: name,
+            email: email,
+            subject: `Portfolio Contact: ${subject}`,
+            message: message
+        };
+        
+        fetch(web3formsUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                // Success feedback styling
+                submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message Sent!';
+                submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                submitBtn.style.boxShadow = '0 4px 15px rgba(16, 185, 129, 0.3)';
                 contactForm.reset();
+            } else {
+                console.error(json);
+                submitBtn.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Error Occurred';
+                submitBtn.style.background = '#ef4444';
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            submitBtn.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Transmission Failed';
+            submitBtn.style.background = '#ef4444';
+        })
+        .finally(() => {
+            // Restore button after delay
+            setTimeout(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnContent;
                 submitBtn.style.background = '';
                 submitBtn.style.boxShadow = '';
-            }, 3000);
-            
-        }, 1500);
+            }, 4000);
+        });
     });
 }
 
